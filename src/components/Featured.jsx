@@ -9,7 +9,9 @@ import Vr from '../assets/features/vr.jpg';
 const Featured = () => {
   return (
     <div className="mt-16 mx-10">
-      <h1 className="font-semibold text-3xl pb-16">Istaknuto za Vas</h1>
+      <h1 className="font-semibold text-3xl pb-16 text-center">
+        Istaknuto za Vas
+      </h1>
       <div className="pb-40">
         {/* Adjust the top padding value as needed */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -20,7 +22,7 @@ const Featured = () => {
               <img
                 src={Kontroler}
                 alt=""
-                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-500 cursor-pointer"
+                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-300 cursor-pointer"
                 style={{ transitionDelay: '0.1s' }}
               />
             </Link>
@@ -33,7 +35,7 @@ const Featured = () => {
               <img
                 src={Laptop}
                 alt=""
-                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-500 cursor-pointer"
+                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-300 cursor-pointer"
                 style={{ transitionDelay: '0.1s' }}
               />
             </Link>
@@ -46,7 +48,7 @@ const Featured = () => {
               <img
                 src={Napajanje}
                 alt=""
-                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-500 cursor-pointer"
+                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-300 cursor-pointer"
                 style={{ transitionDelay: '0.1s' }}
               />
             </Link>
@@ -60,7 +62,7 @@ const Featured = () => {
               <img
                 src={Tastatura}
                 alt=""
-                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-500 cursor-pointer"
+                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-300 cursor-pointer"
                 style={{ transitionDelay: '0.1s' }}
               />
             </Link>
@@ -73,7 +75,7 @@ const Featured = () => {
               <img
                 src={Telefoni}
                 alt=""
-                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-500 cursor-pointer"
+                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-300 cursor-pointer"
                 style={{ transitionDelay: '0.1s' }}
               />
             </Link>
@@ -86,7 +88,7 @@ const Featured = () => {
               <img
                 src={Vr}
                 alt=""
-                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-500 cursor-pointer"
+                className="rounded-lg object-cover w-full h-full transition-transform hover:scale-105 transform-gpu transition-duration-300 cursor-pointer"
                 style={{ transitionDelay: '0.1s' }}
               />
             </Link>
