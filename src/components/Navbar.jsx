@@ -19,6 +19,11 @@ const Navbar = () => {
   const sidebarStyle = {
     opacity: opened ? '1' : '0',
     maxWidth: opened ? '256px' : '0',
+    width: '100%', // Ensure the width is 100%
+    position: 'fixed', // Make the position fixed
+    top: '0', // Position from the top
+    left: '0', // Position from the left
+    height: '100%', // Set the height to 100%
     transition: 'opacity 0.4s ease-in-out, max-width 0.4s ease-in-out',
     zIndex: '999',
   };

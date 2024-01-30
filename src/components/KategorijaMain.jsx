@@ -23,7 +23,7 @@ const KategorijaMain = () => {
         {Array.from({ length: 12 }, (_, index) => (
           <div
             key={index}
-            className="h-80 mt-10"
+            className="h-80 mt-10 transition-transform cursor-pointer hover:scale-105 transform-gpu"
           >
             <div className="max-w-lg rounded overflow-hidden shadow-lg">
               <img
