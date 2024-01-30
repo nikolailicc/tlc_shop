@@ -1,6 +1,6 @@
 import Tastatura from '../assets/features/tastatura.jpeg';
 
-const KategorijaMain = () => {
+const KategorijaMain = (props) => {
   return (
     <div className="mb-10">
       <div className="mt-10 flex flex-col sm:flex-row items-center justify-center">
@@ -18,31 +18,35 @@ const KategorijaMain = () => {
           Pretraži
         </button>
       </div>
-
+      {
+        props.catContent.length !== 0 ? (
       <div className="mx-auto w-full grid px-12 py-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10 grid-auto-rows-auto">
-        {Array.from({ length: 12 }, (_, index) => (
-          <div
+         {Object.keys(props.catContent).map((key, index) => (
+            <div
             key={index}
             className="h-80 mt-10 transition-transform cursor-pointer hover:scale-105 transform-gpu"
-          >
-            <div className="max-w-lg border rounded-xl overflow-hidden shadow-lg">
-              <img
-                className="w-full h-full object-cover"
-                src={Tastatura}
-                alt={`Product ${index + 1}`}
-              />
-              <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">Product Title</div>
-                <p className="text-gray-700 text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                  exercitationem praesentium nihil.
-                </p>
+            >
+              <div className="max-w-lg border rounded-xl overflow-hidden shadow-lg h-[22rem]">
+                <img
+                  className="w-full max-h-[150px] object-contain"
+                  src={props.catContent[key].slika_url}
+                  alt={`Product ${index + 1}`}
+                />
+                <div className="px-6 py-4">
+                  <div className="font-bold text-xl mb-2">{props.catContent[key].ime_proizvoda}</div>
+                  <p className="text-gray-700 text-base">
+                    {props.catContent[key].opis_proizvoda.slice(0, 151)}
+                    {props.catContent[key].opis_proizvoda.length >= 151 ? '...' : ''}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        
+      </div>) : (<div className='h-[32.5rem]'>
+        <h1 className='font-semibold text-3xl pb-16 text-center flex justify-center mt-10'>Nema traženih rezultata</h1>
+      </div>)
+      }
     </div>
   );
 };

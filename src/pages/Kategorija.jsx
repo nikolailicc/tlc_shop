@@ -1,21 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import PulseLoader from '../components/Pulseloader';
 import KategorijaMain from '../components/KategorijaMain';
+import { database as db } from '../firebase/firebase.config';
+import { ref, onValue, off } from 'firebase/database';
 
-const Kategorija = () => {
+const Kategorija = (props) => {
   const { cat } = useParams();
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+  const [ catContent, setCatContent ] = useState([])
 
-    return () => clearTimeout(timer);
-  }, []);
+  useEffect(() => {
+    const unsubscribe = onValue(ref(db, 'proizvodi/' + props.cat_name), (querySnapShot) => {
+      const data = querySnapShot.val() || {};
+      const ctgArray = Object.values(data); // Convert object to array
+      setCatContent(ctgArray);
+      setLoading(false)
+    });
+
+    return () => {
+      // Cleanup function to unsubscribe from Firebase listener
+      off(ref(db, 'proizvodi/' + props.cat_name), 'value', unsubscribe);
+    };
+  }, [cat]);
 
   return (
     <>
@@ -27,7 +37,7 @@ const Kategorija = () => {
           <>
             {/* Your content goes here */}
             <Navbar />
-            <KategorijaMain parametar={cat} />
+            <KategorijaMain parametar={props.cat_name} catContent={catContent} />
             <Footer />
           </>
         )}

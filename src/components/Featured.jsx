@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import Kontroler from '../assets/features/kontroler.jpeg';
 import Laptop from '../assets/features/laptop.jpeg';
-import Napajanje from '../assets/features/napajanje.jpeg';
+import Napajanje from '../assets/features/napajanje.jpg';
 import Tastatura from '../assets/features/tastatura.jpeg';
-import Telefoni from '../assets/features/telefoni.png';
+import Telefoni from '../assets/features/telefoni.jpg';
 import Vr from '../assets/features/vr.jpg';
 
 const Featured = () => {
