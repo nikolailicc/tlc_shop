@@ -25,7 +25,7 @@ const KategorijaMain = () => {
             key={index}
             className="h-80 mt-10 transition-transform cursor-pointer hover:scale-105 transform-gpu"
           >
-            <div className="max-w-lg rounded overflow-hidden shadow-lg">
+            <div className="max-w-lg border rounded-xl overflow-hidden shadow-lg">
               <img
                 className="w-full h-full object-cover"
                 src={Tastatura}
