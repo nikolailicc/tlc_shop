@@ -26,7 +26,7 @@ const KategorijaMain = (props) => {
             key={index}
             className="h-80 mt-10 transition-transform cursor-pointer hover:scale-105 transform-gpu"
             >
-              <div className="max-w-lg border rounded-xl overflow-hidden shadow-lg h-[22rem]">
+              <div className="max-w-lg border rounded-xl overflow-hidden shadow-lg h-[23rem]">
                 <img
                   className="w-full max-h-[150px] object-contain"
                   src={props.catContent[key].slika_url}
@@ -34,6 +34,7 @@ const KategorijaMain = (props) => {
                 />
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2">{props.catContent[key].ime_proizvoda}</div>
+                  <p className='font-bold text-l mb-2'>{props.catContent[key].cijena}</p>
                   <p className="text-gray-700 text-base">
                     {props.catContent[key].opis_proizvoda.slice(0, 151)}
                     {props.catContent[key].opis_proizvoda.length >= 151 ? '...' : ''}
